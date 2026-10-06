@@ -10,7 +10,7 @@ export const CONTACT = {
   phoneHref: "tel:+551138322200",
   whatsappDisplay: "(11) 94828-6616",
   whatsappNumber: "5511948286616",
-  email: "autoescolavital@gmail.com",
+  email: "automotoescolavital@gmail.com",
   hours: [
     { label: "Segunda a sexta", value: "8h às 17h" },
     { label: "Sábados", value: "8h às 12h" },

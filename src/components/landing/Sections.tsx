@@ -313,7 +313,7 @@ export function Gallery() {
                   height={g.h}
                   loading="lazy"
                   decoding="async"
-                  className={cn("aspect-[4/3] w-full transition-transform duration-500 hover:scale-[1.03]", g.contain ? "object-contain p-6" : "object-cover")}
+                  className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
                 />
               </button>
               <figcaption className="px-5 py-3 text-sm font-medium text-foreground">{g.cap}</figcaption>

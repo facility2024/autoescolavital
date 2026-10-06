@@ -5,9 +5,9 @@ import {
   Facebook, Navigation, Star, X,
 } from "lucide-react";
 import heroImg from "@/assets/cara1.webp.asset.json";
-import carImg from "@/assets/caro_vital.webp.asset.json";
-import motoImg from "@/assets/moto_vital.webp.asset.json";
-import fachadaImg from "@/assets/fachada.webp.asset.json";
+import carImg from "@/assets/carro_aula_novo.jpg.asset.json";
+import motoImg from "@/assets/moto_aula_nova.jpg.asset.json";
+import fachadaImg from "@/assets/sede_lapa_nova.jpg.asset.json";
 import aulaImg from "@/assets/podium1.webp.asset.json";
 import casalImg from "@/assets/casal_cnh.webp.asset.json";
 import loiraImg from "@/assets/loira_segrando_cnh.webp.asset.json";
@@ -118,14 +118,15 @@ export function Stats() {
   const items = [
     { node: <Counter to={4.7} decimals={1} />, label: "Nota no Google" },
     { node: <Counter to={CONTACT.googleReviews} />, label: "Avaliações de alunos" },
+    { node: <Counter to={15} suffix="+" />, label: "Anos habilitando cidadãos" },
   ];
   return (
     <section aria-label="Números da Autoescola Vital" className="border-b border-border bg-card">
-      <div className="container-page grid grid-cols-2 gap-6 py-8 text-center">
+      <div className="container-page grid grid-cols-3 gap-4 py-8 text-center sm:gap-6">
         {items.map((s) => (
           <div key={s.label}>
-            <p className="font-display text-4xl font-extrabold text-primary md:text-5xl">{s.node}</p>
-            <p className="mt-1 text-sm font-medium text-muted-foreground">{s.label}</p>
+            <p className="font-display text-2xl font-extrabold text-primary sm:text-3xl md:text-5xl">{s.node}</p>
+            <p className="mt-1 text-xs font-medium text-muted-foreground sm:text-sm">{s.label}</p>
           </div>
         ))}
       </div>
@@ -283,9 +284,9 @@ export function Benefits() {
 
 /* 5.6 FROTA E ESTRUTURA */
 const GALLERY = [
-  { src: carImg.url, w: 1200, h: 760, alt: "Carro de aula da Autoescola Vital na Lapa", cap: "Carro de aula identificado", contain: true },
-  { src: motoImg.url, w: 985, h: 742, alt: "Moto de aula da Autoescola Vital", cap: "Moto de aula para categoria A", contain: true },
-  { src: fachadaImg.url, w: 912, h: 631, alt: "Fachada da Autoescola Vital na Rua Brigadeiro Gavião Peixoto, Lapa", cap: "Nossa sede na Lapa" },
+  { src: carImg.url, w: 906, h: 676, alt: "Carro de aula da Autoescola Vital identificado na Lapa", cap: "Carro de aula identificado" },
+  { src: motoImg.url, w: 911, h: 682, alt: "Moto de aula da Autoescola Vital para categoria A", cap: "Moto de aula para categoria A" },
+  { src: fachadaImg.url, w: 909, h: 677, alt: "Fachada e frota revisada da Autoescola Vital na Rua Brigadeiro Gavião Peixoto, Lapa", cap: "Nossa sede na Lapa" },
   { src: aulaImg.url, w: 1200, h: 551, alt: "Aluna em aula prática de direção com instrutor", cap: "Aula prática com instrutor" },
 ];
 

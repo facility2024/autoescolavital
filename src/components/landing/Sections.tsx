@@ -257,7 +257,7 @@ export function Benefits() {
     { i: BadgeCheck, t: "Instrutores credenciados", d: "Aulas práticas com profissionais habilitados pelo Detran-SP." },
     { i: Car, t: "Frota de carro e moto", d: "Veículos identificados, revisados e usados também no dia do exame." },
     { i: Wallet, t: "Parcelamento", d: "Condições facilitadas para caber no seu orçamento." },
-    { i: CalendarClock, t: "Atendimento aos sábados", d: "Segunda a sexta das 8h às 17h e sábados das 8h às 12h." }, // [CONFIRMAR horários de aula]
+    { i: CalendarClock, t: "Atendimento aos sábados", d: "Segunda a sexta das 8h às 18h e sábados das 8h às 12h." }, // [CONFIRMAR horários de aula]
     { i: MapPin, t: "Na Lapa", d: "Rua Brigadeiro Gavião Peixoto, 35, perto do comércio e do transporte da região." },
   ];
   return (

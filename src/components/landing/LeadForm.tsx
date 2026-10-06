@@ -50,7 +50,7 @@ export function LeadForm({ full = false, origin }: { full?: boolean; origin: str
     handleSubmit,
     setValue,
     formState: { errors },
-  } = useForm<FormData>({ resolver: zodResolver(ext), defaultValues: { categoria: undefined } });
+  } = useForm<FormData>({ resolver: zodResolver(ext) as never });
 
   const onSubmit = async (data: FormData) => {
     if (data.website) return; // bot

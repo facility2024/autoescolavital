@@ -97,7 +97,7 @@ function Counter({ to, decimals = 0, suffix = "" }: { to: number; decimals?: num
     if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     setV(0);
     const io = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return;
+      if (!e?.isIntersecting) return;
       io.disconnect();
       const start = performance.now();
       const step = (t: number) => {
@@ -141,7 +141,7 @@ export function Plans() {
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { trackEvent("view_plans"); io.disconnect(); }
+      if (e?.isIntersecting) { trackEvent("view_plans"); io.disconnect(); }
     }, { threshold: 0.3 });
     io.observe(el);
     return () => io.disconnect();
@@ -321,11 +321,11 @@ export function Gallery() {
         </div>
       </div>
       {open !== null && (
-        <div role="dialog" aria-modal="true" aria-label={GALLERY[open].cap} className="fixed inset-0 z-[60] flex items-center justify-center bg-navy-deep/90 p-4" onClick={() => setOpen(null)}>
+        <div role="dialog" aria-modal="true" aria-label={GALLERY[open]!.cap} className="fixed inset-0 z-[60] flex items-center justify-center bg-navy-deep/90 p-4" onClick={() => setOpen(null)}>
           <button aria-label="Fechar" className="absolute right-4 top-4 inline-flex size-12 items-center justify-center rounded-full bg-card text-primary" onClick={() => setOpen(null)}>
             <X className="size-6" aria-hidden />
           </button>
-          <img src={GALLERY[open].src} alt={GALLERY[open].alt} className="max-h-[85vh] max-w-full rounded-2xl bg-card object-contain" />
+          <img src={GALLERY[open]!.src} alt={GALLERY[open]!.alt} className="max-h-[85vh] max-w-full rounded-2xl bg-card object-contain" />
         </div>
       )}
     </section>
@@ -398,7 +398,7 @@ export function Services() {
                 </span>
                 <h3 className="mt-4 text-xl font-bold text-primary">{s.t}</h3>
                 <p className="mt-2 flex-1 text-muted-foreground">{s.d}</p>
-                <WhatsAppButton message={s.m} location={`servico_${s.t.split(" ")[0].toLowerCase()}`} className="mt-6 w-full">
+                <WhatsAppButton message={s.m} location={`servico_${s.t.split(" ")[0]!.toLowerCase()}`} className="mt-6 w-full">
                   Saber mais
                 </WhatsAppButton>
               </article>
@@ -448,7 +448,7 @@ function LazyMap() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setShow(true); io.disconnect(); } }, { rootMargin: "300px" });
+    const io = new IntersectionObserver(([e]) => { if (e?.isIntersecting) { setShow(true); io.disconnect(); } }, { rootMargin: "300px" });
     io.observe(el);
     return () => io.disconnect();
   }, []);

@@ -17,8 +17,8 @@ export function trackEvent(name: string, params: Params = {}) {
   window.gtag?.("event", name, params);
   if (CONVERSIONS.has(name)) {
     window.fbq?.("track", name === "form_submit" ? "Lead" : "Contact", params);
-    const ads = import.meta.env.VITE_GADS_ID;
-    const label = import.meta.env.VITE_GADS_CONVERSION_LABEL;
+    const ads = import.meta.env["VITE_GADS_ID"];
+    const label = import.meta.env["VITE_GADS_CONVERSION_LABEL"];
     if (ads && label) window.gtag?.("event", "conversion", { send_to: `${ads}/${label}` });
   }
 }
@@ -42,9 +42,9 @@ let loaded = false;
 export function loadTrackers() {
   if (loaded || typeof window === "undefined") return;
   loaded = true;
-  const ga = import.meta.env.VITE_GA4_ID;
-  const ads = import.meta.env.VITE_GADS_ID;
-  const pixel = import.meta.env.VITE_META_PIXEL_ID;
+  const ga = import.meta.env["VITE_GA4_ID"];
+  const ads = import.meta.env["VITE_GADS_ID"];
+  const pixel = import.meta.env["VITE_META_PIXEL_ID"];
   const gid = ga || ads;
   if (gid) {
     const s = document.createElement("script");

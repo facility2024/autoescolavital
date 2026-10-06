@@ -4,7 +4,7 @@ import {
   Car, Award, CalendarClock, MapPin, Bike, RotateCcw, Plus, Phone, Mail, Clock, Instagram,
   Facebook, Navigation, Star, X,
 } from "lucide-react";
-import heroImg from "@/assets/cara1.webp.asset.json";
+import heroImg from "@/assets/loira_topo_cnh.png.asset.json";
 import carImg from "@/assets/carro_aula_novo.jpg.asset.json";
 import motoImg from "@/assets/moto_aula_nova.jpg.asset.json";
 import fachadaImg from "@/assets/sede_lapa_nova.jpg.asset.json";
@@ -69,11 +69,11 @@ export function Hero() {
             <div className="absolute inset-4 rounded-full bg-highlight" />
             <img
               src={heroImg.url}
-              alt="Aluno sorridente mostrando a CNH recém-tirada na Autoescola Vital"
-              width={930}
-              height={1200}
+              alt="Mulher sorridente segurando sua CNH"
+              width={800}
+              height={573}
               fetchPriority="high"
-              className="absolute bottom-0 left-1/2 h-[118%] w-auto -translate-x-1/2 object-contain"
+              className="absolute bottom-0 left-1/2 h-full w-full -translate-x-1/2 object-contain"
             />
           </div>
           <div className="relative z-10 mx-auto max-w-md rounded-3xl bg-card p-6 text-card-foreground shadow-lift sm:-mt-6">

@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the official contact email centralized in CONTACT so visible links and structured metadata stay consistent.
+- Both lead forms share LeadForm; email delivery must be added to its submission flow only after a sender domain is configured, without claiming delivery beforehand.

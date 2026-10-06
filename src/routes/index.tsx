@@ -20,7 +20,7 @@ const ld = [
     priceRange: "R$ 449 - R$ 1.399",
     address: { "@type": "PostalAddress", streetAddress: CONTACT.street, addressLocality: "São Paulo", addressRegion: "SP", addressCountry: "BR" },
     openingHoursSpecification: [
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "17:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "18:00" },
       { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "08:00", closes: "12:00" },
     ],
     sameAs: [CONTACT.instagram, CONTACT.facebook],

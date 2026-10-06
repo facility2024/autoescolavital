@@ -12,7 +12,7 @@ export const CONTACT = {
   whatsappNumber: "5511948286616",
   email: "automotoescolavital@gmail.com",
   hours: [
-    { label: "Segunda a sexta", value: "8h às 17h" },
+    { label: "Segunda a sexta", value: "8h às 18h" },
     { label: "Sábados", value: "8h às 12h" },
   ],
   instagram: "https://www.instagram.com/autoescolavital/",

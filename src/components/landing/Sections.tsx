@@ -76,7 +76,7 @@ export function Hero() {
               className="absolute bottom-0 left-1/2 h-full w-full -translate-x-1/2 object-contain"
             />
           </div>
-          <div className="relative z-10 mx-auto max-w-md rounded-3xl bg-card p-6 text-card-foreground shadow-lift sm:-mt-6">
+          <div className="relative z-10 mx-auto max-w-md rounded-3xl bg-card p-6 text-card-foreground shadow-lift sm:-mt-16">
             <p className="text-xl font-bold text-primary">Receba um orçamento agora</p>
             <p className="mb-4 text-sm text-muted-foreground">Respondemos pelo WhatsApp em horário comercial.</p>
             <LeadForm origin="hero" />

@@ -36,6 +36,7 @@
   --color-whatsapp-foreground: var(--whatsapp-foreground);
   --color-highlight: var(--highlight);
   --color-highlight-foreground: var(--highlight-foreground);
+  --color-orange-soft: var(--orange-soft);
   --color-navy-deep: var(--navy-deep);
   --shadow-soft: var(--shadow-soft);
   --shadow-lift: var(--shadow-lift);
@@ -62,6 +63,8 @@
   /* Amarelo destaque #FFB400 */
   --highlight: oklch(0.82 0.17 75);
   --highlight-foreground: oklch(0.22 0.05 260);
+  /* Laranja suave p/ degradê dos cartões de plano */
+  --orange-soft: oklch(0.85 0.13 60);
   /* WhatsApp: tom escurecido p/ contraste AA com texto branco */
   --whatsapp: oklch(0.56 0.15 150);
   --whatsapp-foreground: oklch(1 0 0);

@@ -175,7 +175,7 @@ export function Plans() {
                 {PLANS[b.id].map((p) => (
                   <article
                     key={p.id}
-                    className="flex flex-col rounded-3xl border border-border bg-gradient-to-b from-highlight/15 to-card p-7 shadow-soft"
+                    className="flex flex-col rounded-3xl border border-border bg-gradient-to-b from-highlight/60 to-orange-soft/40 p-7 shadow-soft"
                   >
                     <h4 className="text-xl font-bold text-primary">Plano {p.name}</h4>
                     <p className="text-sm text-muted-foreground">{groupLabel}</p>

@@ -7,12 +7,16 @@ import {
 import heroImg from "@/assets/loira_topo_cnh.png.asset.json";
 import carImg from "@/assets/carro_aula_novo.jpg.asset.json";
 import motoImg from "@/assets/moto_aula_nova.jpg.asset.json";
+import ouSignImg from "@/assets/plano_ou.png.asset.json";
+import maisSignImg from "@/assets/plano_mais.png.asset.json";
+import frotaCarroImg from "@/assets/caro_vital_2.png.asset.json";
+import frotaMotoImg from "@/assets/moto_vital_2.png.asset.json";
 import fachadaImg from "@/assets/sede_lapa_nova.jpg.asset.json";
 import aulaImg from "@/assets/podium1.webp.asset.json";
 import casalImg from "@/assets/casal_cnh.webp.asset.json";
 import loiraImg from "@/assets/loira_segrando_cnh.webp.asset.json";
 import { CONTACT, DEFAULT_WA_MESSAGE } from "@/config/contact";
-import { PLANS, PLAN_GROUPS, MIN_PRICE, formatBRL, type PlanGroup } from "@/data/plans";
+import { PLANS, MIN_PRICE, formatBRL } from "@/data/plans";
 import { FAQ } from "@/data/faq";
 import { TESTIMONIALS } from "@/data/testimonials";
 import { buildWhatsAppLink } from "@/lib/whatsapp";

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { MessageCircle, Phone, Mail, MapPin, Clock, Instagram, Facebook } from "lucide-react";
-import logo from "@/assets/logo.webp.asset.json";
+import logo from "@/assets/logotipo_novo.jpg.asset.json";
 import { CONTACT, DEFAULT_WA_MESSAGE } from "@/config/contact";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { loadTrackers, trackEvent } from "@/lib/track";

@@ -164,12 +164,12 @@ export function Plans() {
           const groupLabel = b.id === "carro-ou-moto" ? "Carro ou Moto" : "Carro e Moto";
           return (
             <div key={b.id} className="mt-14 first:mt-10">
-              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-                <img src={frotaCarroImg.url} alt="" loading="lazy" className="h-14 w-auto sm:h-20" aria-hidden />
+              <div className="flex flex-col items-center justify-center gap-y-2 sm:flex-row sm:gap-x-4">
+                <img src={frotaCarroImg.url} alt="" loading="lazy" className="h-28 w-auto sm:h-40" aria-hidden />
                 <h3 className="font-display text-3xl font-extrabold text-primary sm:text-4xl">
                   Carro<img src={b.sign.url} alt={b.signAlt} loading="lazy" className="mx-2 inline-block size-9 align-middle sm:size-12" />Moto
                 </h3>
-                <img src={frotaMotoImg.url} alt="" loading="lazy" className="h-14 w-auto sm:h-20" aria-hidden />
+                <img src={frotaMotoImg.url} alt="" loading="lazy" className="h-28 w-auto sm:h-40" aria-hidden />
               </div>
               <div className="mt-8 grid gap-6 md:grid-cols-3">
                 {PLANS[b.id].map((p) => (

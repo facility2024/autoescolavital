@@ -7,12 +7,16 @@ import {
 import heroImg from "@/assets/loira_topo_cnh.png.asset.json";
 import carImg from "@/assets/carro_aula_novo.jpg.asset.json";
 import motoImg from "@/assets/moto_aula_nova.jpg.asset.json";
+import ouSignImg from "@/assets/plano_ou.png.asset.json";
+import maisSignImg from "@/assets/plano_mais.png.asset.json";
+import frotaCarroImg from "@/assets/caro_vital_2.png.asset.json";
+import frotaMotoImg from "@/assets/moto_vital_2.png.asset.json";
 import fachadaImg from "@/assets/sede_lapa_nova.jpg.asset.json";
 import aulaImg from "@/assets/podium1.webp.asset.json";
 import casalImg from "@/assets/casal_cnh.webp.asset.json";
 import loiraImg from "@/assets/loira_segrando_cnh.webp.asset.json";
 import { CONTACT, DEFAULT_WA_MESSAGE } from "@/config/contact";
-import { PLANS, PLAN_GROUPS, MIN_PRICE, formatBRL, type PlanGroup } from "@/data/plans";
+import { PLANS, MIN_PRICE, formatBRL } from "@/data/plans";
 import { FAQ } from "@/data/faq";
 import { TESTIMONIALS } from "@/data/testimonials";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
@@ -136,7 +140,6 @@ export function Stats() {
 
 /* 5.3 PLANOS */
 export function Plans() {
-  const [group, setGroup] = useState<PlanGroup>("carro-ou-moto");
   const ref = useRef<HTMLElement>(null);
   useEffect(() => {
     const el = ref.current;
@@ -147,63 +150,57 @@ export function Plans() {
     io.observe(el);
     return () => io.disconnect();
   }, []);
-  const groupLabel = PLAN_GROUPS.find((g) => g.id === group)!.label;
+
+  const blocks = [
+    { id: "carro-ou-moto", sign: ouSignImg, signAlt: "ou" },
+    { id: "carro-e-moto", sign: maisSignImg, signAlt: "e" },
+  ] as const;
 
   return (
     <section id="planos" ref={ref} className="py-16 md:py-24">
       <div className="container-page">
         <SectionHeading eyebrow="Planos" title="Escolha o plano ideal para você" sub="Preços claros, sem surpresa. Todos incluem veículo para o exame e agendamento." />
-        <div role="tablist" aria-label="Tipo de plano" className="mx-auto mb-10 flex w-fit rounded-2xl bg-secondary p-1.5">
-          {PLAN_GROUPS.map((g) => (
-            <button
-              key={g.id}
-              role="tab"
-              aria-selected={group === g.id}
-              onClick={() => setGroup(g.id)}
-              className={cn(
-                "h-12 rounded-xl px-5 text-sm font-semibold transition-colors sm:px-8 sm:text-base",
-                group === g.id ? "bg-primary text-primary-foreground shadow-soft" : "text-primary",
-              )}
-            >
-              {g.label}
-            </button>
-          ))}
-        </div>
-        <div className="grid gap-6 md:grid-cols-3 md:items-stretch">
-          {PLANS[group].map((p) => (
-            <article
-              key={p.id}
-              className={cn(
-                "relative flex flex-col rounded-3xl border bg-card p-7 shadow-soft",
-                p.featured ? "border-2 border-highlight shadow-lift md:-translate-y-3" : "border-border",
-              )}
-            >
-              {p.featured && (
-                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-highlight px-4 py-1 text-xs font-bold uppercase tracking-wide text-highlight-foreground">
-                  Mais escolhido
-                </span>
-              )}
-              <h3 className="text-xl font-bold text-primary">Plano {p.name}</h3>
-              <p className="text-sm text-muted-foreground">{groupLabel}</p>
-              <p className="mt-5 font-display text-4xl font-extrabold text-foreground">{formatBRL(p.price)}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{p.payment}</p>
-              <ul className="mt-6 flex-1 space-y-3">
-                {p.benefits.map((b) => (
-                  <li key={b} className="flex gap-3 text-foreground">
-                    <Check className="mt-0.5 size-5 shrink-0 text-whatsapp" aria-hidden />{b}
-                  </li>
+        {blocks.map((b) => {
+          const groupLabel = b.id === "carro-ou-moto" ? "Carro ou Moto" : "Carro e Moto";
+          return (
+            <div key={b.id} className="mt-14 first:mt-10">
+              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+                <img src={frotaCarroImg.url} alt="" loading="lazy" className="h-14 w-auto sm:h-20" aria-hidden />
+                <h3 className="font-display text-3xl font-extrabold text-primary sm:text-4xl">
+                  Carro<img src={b.sign.url} alt={b.signAlt} loading="lazy" className="mx-2 inline-block size-9 align-middle sm:size-12" />Moto
+                </h3>
+                <img src={frotaMotoImg.url} alt="" loading="lazy" className="h-14 w-auto sm:h-20" aria-hidden />
+              </div>
+              <div className="mt-8 grid gap-6 md:grid-cols-3">
+                {PLANS[b.id].map((p) => (
+                  <article
+                    key={p.id}
+                    className="flex flex-col rounded-3xl border border-border bg-gradient-to-b from-highlight/15 to-card p-7 shadow-soft"
+                  >
+                    <h4 className="text-xl font-bold text-primary">Plano {p.name}</h4>
+                    <p className="text-sm text-muted-foreground">{groupLabel}</p>
+                    <p className="mt-5 font-display text-4xl font-extrabold text-foreground">{formatBRL(p.price)}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{p.payment}</p>
+                    <ul className="mt-6 flex-1 space-y-3">
+                      {p.benefits.map((ben) => (
+                        <li key={ben} className="flex gap-3 text-foreground">
+                          <Check className="mt-0.5 size-5 shrink-0 text-whatsapp" aria-hidden />{ben}
+                        </li>
+                      ))}
+                    </ul>
+                    <WhatsAppButton
+                      message={`Olá! Tenho interesse no plano ${p.name} (${groupLabel}). Pode me passar mais informações?`}
+                      location={`plano_${p.name.toLowerCase()}`}
+                      className="mt-7 w-full"
+                    >
+                      Quero o plano {p.name}
+                    </WhatsAppButton>
+                  </article>
                 ))}
-              </ul>
-              <WhatsAppButton
-                message={`Olá! Tenho interesse no plano ${p.name} (${groupLabel}). Pode me passar mais informações?`}
-                location={`plano_${p.name.toLowerCase()}`}
-                className="mt-7 w-full"
-              >
-                Quero o plano {p.name}
-              </WhatsAppButton>
-            </article>
-          ))}
-        </div>
+              </div>
+            </div>
+          );
+        })}
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
           Valores sujeitos a alteração. Taxas do Detran-SP e exames médico e psicológico não incluídos.
         </p>

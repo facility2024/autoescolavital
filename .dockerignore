@@ -9,5 +9,3 @@ dist-ssr
 .workspace
 .lovable
 *.log
-Dockerfile
-.dockerignore

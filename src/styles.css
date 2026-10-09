@@ -53,7 +53,7 @@
   /* Azul Vital #0B2A5B */
   --primary: oklch(0.3 0.1 260);
   --primary-foreground: oklch(0.99 0 0);
-  --navy-deep: oklch(0.22 0.08 262);
+  --navy-deep: #0B2B5F;
   --secondary: oklch(0.95 0.015 255);
   --secondary-foreground: oklch(0.3 0.1 260);
   --muted: oklch(0.955 0.008 255);
@@ -115,11 +115,11 @@
 }
 
 @utility bg-hero {
-  background: var(--background);
+  background: var(--navy-deep);
 }
 
-/* The page canvas stays uniform; individual content cards retain their surfaces. */
-main > section {
+/* Orange canvas with explicit blue contrast bands; cards keep their surfaces. */
+main > section:not(.bg-hero) {
   background-color: var(--background);
 }
 

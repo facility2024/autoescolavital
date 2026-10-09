@@ -12,4 +12,4 @@
 - Keep the official contact email centralized in CONTACT so visible links and structured metadata stay consistent.
 - Both lead forms share LeadForm; email delivery must be added to its submission flow only after a sender domain is configured, without claiming delivery beforehand.
 - Plan group artwork uses a native picture element with horizontal artwork at tablet/desktop widths and vertical artwork on phones, so only the matching image loads.
-- Keep the site canvas on the background token across full-width sections, header, and footer; preserve separate card surfaces for readability.
+- Use the background token for the main canvas, explicit bg-hero/bg-navy-deep bands for contrast, and card surfaces for content and the translucent fixed header; this keeps each surface independently themeable.

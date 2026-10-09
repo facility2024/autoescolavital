@@ -30,17 +30,17 @@ import { Reveal, SectionHeading, Stars, WhatsAppButton } from "./shared";
 /* 5.1 HERO */
 export function Hero() {
   return (
-    <section id="inicio" className="bg-hero relative overflow-hidden pt-16 text-foreground">
+    <section id="inicio" className="bg-hero relative overflow-hidden pt-16 text-primary-foreground">
       <div className="container-page grid gap-10 py-12 md:py-16 lg:grid-cols-[1.15fr_1fr] lg:items-center">
         <div>
           <p className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-3 py-1 text-sm font-medium">
-            <MapPin className="size-4 text-primary" aria-hidden /> Autoescola na Lapa · São Paulo
+            <MapPin className="size-4 text-highlight" aria-hidden /> Autoescola na Lapa · São Paulo
           </p>
           <h1 className="mt-5 text-4xl font-extrabold leading-[1.08] md:text-5xl lg:text-[3.4rem]">
             Tire sua CNH na Lapa com planos a partir de{" "}
-            <span className="text-primary">{formatBRL(MIN_PRICE).replace(",00", "")}</span> e atendimento rápido
+            <span className="text-highlight">{formatBRL(MIN_PRICE).replace(",00", "")}</span> e atendimento rápido
           </h1>
-          <p className="mt-5 max-w-xl text-lg text-foreground/85">
+          <p className="mt-5 max-w-xl text-lg text-primary-foreground/85">
             Primeira habilitação, adição de categoria e reabilitação com instrutores credenciados, aulas flexíveis e
             suporte completo com o Detran-SP.
           </p>
@@ -63,14 +63,14 @@ export function Hero() {
               { i: BadgeCheck, t: "Instrutores credenciados" },
               { i: Landmark, t: "Suporte no Detran" },
             ].map(({ i: I, t }) => (
-              <li key={t} className="flex items-center gap-2"><I className="size-5 text-primary" aria-hidden />{t}</li>
+              <li key={t} className="flex items-center gap-2"><I className="size-5 text-highlight" aria-hidden />{t}</li>
             ))}
           </ul>
         </div>
 
         <div className="relative">
           <div className="relative mx-auto hidden h-[300px] w-[300px] sm:block lg:h-[340px] lg:w-[340px]">
-            <div className="absolute inset-4 rounded-full bg-highlight" />
+            <div className="absolute inset-4 rounded-full bg-background" />
             <img
               src={heroImg.url}
               alt="Mulher sorridente segurando sua CNH"
@@ -502,10 +502,10 @@ export function Contact() {
 /* 5.11 CTA FINAL */
 export function FinalCTA() {
   return (
-    <section className="bg-hero py-16 text-center text-foreground md:py-20">
+    <section className="bg-hero py-16 text-center text-primary-foreground md:py-20">
       <div className="container-page">
         <h2 className="text-3xl font-extrabold md:text-5xl">Pronto para começar?</h2>
-        <p className="mx-auto mt-3 max-w-xl text-lg text-foreground/85">
+        <p className="mx-auto mt-3 max-w-xl text-lg text-primary-foreground/85">
           Fale agora com a Vital e saia com seu plano definido hoje mesmo.
         </p>
         <WhatsAppButton message={DEFAULT_WA_MESSAGE} location="cta_final" size="xl" className="mt-8">

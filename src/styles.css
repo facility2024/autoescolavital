@@ -118,7 +118,7 @@
   background: var(--navy-deep);
 }
 
-/* Orange canvas with explicit blue contrast bands; cards keep their surfaces. */
+/* White canvas with explicit blue contrast bands; cards keep their surfaces. */
 main > section:not(.bg-hero) {
   background-color: var(--background);
 }

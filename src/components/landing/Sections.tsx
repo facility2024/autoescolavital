@@ -70,7 +70,7 @@ export function Hero() {
 
         <div className="relative">
           <div className="relative mx-auto hidden h-[300px] w-[300px] sm:block lg:h-[340px] lg:w-[340px]">
-            <div className="absolute inset-4 rounded-full bg-background" />
+            <div className="absolute inset-4 rounded-full bg-highlight" />
             <img
               src={heroImg.url}
               alt="Mulher sorridente segurando sua CNH"

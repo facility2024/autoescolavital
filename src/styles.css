@@ -44,7 +44,7 @@
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.985 0.004 250);
+  --background: #FFB113;
   --foreground: oklch(0.27 0.02 255);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.27 0.02 255);
@@ -115,9 +115,12 @@
 }
 
 @utility bg-hero {
-  background:
-    radial-gradient(60rem 30rem at 85% 10%, oklch(0.4 0.12 258) 0%, transparent 60%),
-    linear-gradient(160deg, var(--primary), var(--navy-deep));
+  background: var(--background);
+}
+
+/* The page canvas stays uniform; individual content cards retain their surfaces. */
+main > section {
+  background-color: var(--background);
 }
 
 .reveal {

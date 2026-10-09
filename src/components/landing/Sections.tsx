@@ -7,10 +7,10 @@ import {
 import heroImg from "@/assets/loira_topo_cnh.png.asset.json";
 import carImg from "@/assets/carro_aula_novo.jpg.asset.json";
 import motoImg from "@/assets/moto_aula_nova.jpg.asset.json";
-import ouSignImg from "@/assets/plano_ou.png.asset.json";
-import maisSignImg from "@/assets/plano_mais.png.asset.json";
-import frotaCarroImg from "@/assets/caro_vital_2.png.asset.json";
-import frotaMotoImg from "@/assets/moto_vital_2.png.asset.json";
+import carroOuMotoHorizontal from "@/assets/carro_ou_moto_horizontal.png.asset.json";
+import carroOuMotoVertical from "@/assets/carro_ou_moto_vertical.png.asset.json";
+import carroEMotoHorizontal from "@/assets/carro_e_moto_horizontal.png.asset.json";
+import carroEMotoVertical from "@/assets/carro_e_moto_vertical.png.asset.json";
 import fachadaImg from "@/assets/sede_lapa_nova.jpg.asset.json";
 import aulaImg from "@/assets/podium1.webp.asset.json";
 import casalImg from "@/assets/casal_cnh.webp.asset.json";
@@ -30,17 +30,17 @@ import { Reveal, SectionHeading, Stars, WhatsAppButton } from "./shared";
 /* 5.1 HERO */
 export function Hero() {
   return (
-    <section id="inicio" className="bg-hero relative overflow-hidden pt-16 text-primary-foreground">
+    <section id="inicio" className="bg-hero relative overflow-hidden pt-16 text-foreground">
       <div className="container-page grid gap-10 py-12 md:py-16 lg:grid-cols-[1.15fr_1fr] lg:items-center">
         <div>
           <p className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-3 py-1 text-sm font-medium">
-            <MapPin className="size-4 text-highlight" aria-hidden /> Autoescola na Lapa · São Paulo
+            <MapPin className="size-4 text-primary" aria-hidden /> Autoescola na Lapa · São Paulo
           </p>
           <h1 className="mt-5 text-4xl font-extrabold leading-[1.08] md:text-5xl lg:text-[3.4rem]">
             Tire sua CNH na Lapa com planos a partir de{" "}
-            <span className="text-highlight">{formatBRL(MIN_PRICE).replace(",00", "")}</span> e atendimento rápido
+            <span className="text-primary">{formatBRL(MIN_PRICE).replace(",00", "")}</span> e atendimento rápido
           </h1>
-          <p className="mt-5 max-w-xl text-lg text-primary-foreground/85">
+          <p className="mt-5 max-w-xl text-lg text-foreground/85">
             Primeira habilitação, adição de categoria e reabilitação com instrutores credenciados, aulas flexíveis e
             suporte completo com o Detran-SP.
           </p>
@@ -63,7 +63,7 @@ export function Hero() {
               { i: BadgeCheck, t: "Instrutores credenciados" },
               { i: Landmark, t: "Suporte no Detran" },
             ].map(({ i: I, t }) => (
-              <li key={t} className="flex items-center gap-2"><I className="size-5 text-highlight" aria-hidden />{t}</li>
+              <li key={t} className="flex items-center gap-2"><I className="size-5 text-primary" aria-hidden />{t}</li>
             ))}
           </ul>
         </div>
@@ -152,8 +152,8 @@ export function Plans() {
   }, []);
 
   const blocks = [
-    { id: "carro-ou-moto", sign: ouSignImg, signAlt: "ou" },
-    { id: "carro-e-moto", sign: maisSignImg, signAlt: "e" },
+    { id: "carro-ou-moto", horizontal: carroOuMotoHorizontal, vertical: carroOuMotoVertical, verticalWidth: 1552 },
+    { id: "carro-e-moto", horizontal: carroEMotoHorizontal, vertical: carroEMotoVertical, verticalWidth: 1551 },
   ] as const;
 
   return (
@@ -164,13 +164,12 @@ export function Plans() {
           const groupLabel = b.id === "carro-ou-moto" ? "Carro ou Moto" : "Carro e Moto";
           return (
             <div key={b.id} className="mt-14 first:mt-10">
-              <div className="flex flex-col items-center justify-center gap-y-2 sm:flex-row sm:gap-x-4">
-                <img src={frotaCarroImg.url} alt="" loading="lazy" className="h-28 w-auto sm:h-40" aria-hidden />
-                <h3 className="font-display text-3xl font-extrabold text-primary sm:text-4xl">
-                  Carro<img src={b.sign.url} alt={b.signAlt} loading="lazy" className="mx-2 inline-block size-9 align-middle sm:size-12" />Moto
-                </h3>
-                <img src={frotaMotoImg.url} alt="" loading="lazy" className="h-28 w-auto sm:h-40" aria-hidden />
-              </div>
+              <h3>
+                <picture className="block">
+                  <source media="(min-width: 768px)" srcSet={b.horizontal.url} width={1920} height={588} />
+                  <img src={b.vertical.url} alt={groupLabel} width={b.verticalWidth} height={1799} loading="lazy" className="mx-auto block h-auto w-full max-w-md object-contain md:max-w-none" />
+                </picture>
+              </h3>
               <div className="mt-8 grid gap-6 md:grid-cols-3">
                 {PLANS[b.id].map((p) => (
                   <article
@@ -503,10 +502,10 @@ export function Contact() {
 /* 5.11 CTA FINAL */
 export function FinalCTA() {
   return (
-    <section className="bg-hero py-16 text-center text-primary-foreground md:py-20">
+    <section className="bg-hero py-16 text-center text-foreground md:py-20">
       <div className="container-page">
         <h2 className="text-3xl font-extrabold md:text-5xl">Pronto para começar?</h2>
-        <p className="mx-auto mt-3 max-w-xl text-lg text-primary-foreground/85">
+        <p className="mx-auto mt-3 max-w-xl text-lg text-foreground/85">
           Fale agora com a Vital e saia com seu plano definido hoje mesmo.
         </p>
         <WhatsAppButton message={DEFAULT_WA_MESSAGE} location="cta_final" size="xl" className="mt-8">

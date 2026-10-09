@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-border/60 bg-card/95 backdrop-blur">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-border/60 bg-background/95 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between">
         <a href="#inicio" aria-label="Autoescola Vital - início">
           <img src={logo.url} alt="Logotipo Autoescola Vital" width={400} height={216} className="h-11 w-auto" />
@@ -73,11 +73,11 @@ export function StickyMobileBar() {
 
 export function Footer() {
   return (
-    <footer className="bg-navy-deep pb-24 pt-12 text-primary-foreground md:pb-12">
+    <footer className="bg-background pb-24 pt-12 text-foreground md:pb-12">
       <div className="container-page grid gap-8 md:grid-cols-3">
         <div>
           <img src={logo.url} alt="Logotipo Autoescola Vital" width={400} height={216} loading="lazy" className="h-14 w-auto rounded-xl bg-card p-1.5" />
-          <p className="mt-4 text-sm text-primary-foreground/80">
+          <p className="mt-4 text-sm text-foreground/80">
             Autoescola na Lapa, São Paulo. Primeira habilitação, adição de categoria e reabilitação de CNH.
           </p>
         </div>
@@ -97,7 +97,7 @@ export function Footer() {
           </li>
         </ul>
       </div>
-      <div className="container-page mt-10 border-t border-primary-foreground/15 pt-6 text-xs text-primary-foreground/70">
+      <div className="container-page mt-10 border-t border-foreground/15 pt-6 text-xs text-foreground/70">
         <p>
           © {new Date().getFullYear()} {CONTACT.name}
           {CONTACT.cnpj && ` · CNPJ ${CONTACT.cnpj}`}. Seus dados são usados apenas para retornar seu contato, conforme a LGPD.{" "}
